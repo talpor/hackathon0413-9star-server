@@ -1,18 +1,20 @@
 import RPi.GPIO as GPIO
 import time
 
-def push_button(pin_number, sleep_time):
+GATE_PIN = {
+    '1': 11,
+    '2': 13,
+}
+
+def open_gate(gate):
     GPIO.cleanup()
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin_number, GPIO.OUT)
+    GPIO.setup(GATE_PIN[gate], GPIO.OUT)
 
-    GPIO.output(pin_number, GPIO.HIGH)
-    time.sleep(sleep_time)
-    GPIO.output(pin_number, GPIO.LOW)
+    GPIO.output(GATE_PIN[gate], GPIO.HIGH)
+    time.sleep(1)
+    GPIO.output(GATE_PIN[gate], GPIO.LOW)
     time.sleep(1)
 
     GPIO.cleanup()
-    return
-    
-
-
+    return True

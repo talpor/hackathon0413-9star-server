@@ -6,13 +6,6 @@ from utils import gpio
 
 def access_action(request, gate):
     """Try run the action script for the given gate"""
-    sleep = 1
-    success = False
-    if gate == '1' or gate == '2':
-        if gate == '1':
-            sleep = 5
-
-        gpio.puss_button(gate, sleep)
-        success = True
-
-    return JsonResponse({'success': success})
+    if gate != '1' and gate != '2':
+        return
+    return JsonResponse({'success': gpio.open_gate(gate)})
