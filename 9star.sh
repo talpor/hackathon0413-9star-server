@@ -2,8 +2,8 @@
 
 ### BEGIN INIT INFO
 # Provides:          9star server
-# Required-Start:
-# Required-Stop:
+# Required-Start:    $local_fs $remote_fs $network $syslog $named
+# Required-Stop:     $local_fs $remote_fs $network $syslog $named
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: starts the 9star web server
