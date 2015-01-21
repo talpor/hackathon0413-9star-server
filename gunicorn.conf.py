@@ -3,7 +3,7 @@ import os
 def num_cpus():
     if not hasattr(os, "sysconf"):
         raise RuntimeError("No sysconf detected.")
-        return os.sysconf("SC_NPROCESSORS_ONLN")
+    return os.sysconf("SC_NPROCESSORS_ONLN")
 
 
 preload = True
