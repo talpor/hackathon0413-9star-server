@@ -16,7 +16,7 @@
 case "$1" in
   start)
     echo "Starting 9star server"
-    cd /home/pi/9star/ && gunicorn --pythonpath="NineStarServer" wsgi:application -c gunicorn.conf.py &
+    cd /home/pi/9star/ && /usr/local/bin/gunicorn --pythonpath="NineStarServer" wsgi:application -c gunicorn.conf.py &
     ;;
   stop)
     echo "Stopping 9star server"
