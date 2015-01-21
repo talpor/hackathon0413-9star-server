@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 import time
 
 GATE_PIN = {
-    '1': 11,
-    '2': 13,
+    '1': 13,
+    '2': 11,
 }
 
 def open_gate(gate):
